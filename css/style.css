@@ -12,6 +12,27 @@ azul menu rgba(2,122,255,255);
 
 gris intermedio rgba(90,92,92,255);
 
-
-
 */
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.barraBusqueda{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.barraBusqueda h5{
+    margin-bottom: 0;
+    color: rgba(55,57,57,255);
+}
