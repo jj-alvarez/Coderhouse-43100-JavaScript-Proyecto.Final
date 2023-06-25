@@ -7,6 +7,7 @@ let inputMin = document.querySelector("#inputMin");
 let inputMax = document.querySelector("#inputMax");
 let btnFiltrarTitulo = document.querySelector("#btnFiltrarTitulo");
 let inputTitulo = document.querySelector("#inputTitulo");
+let btnLimpiar = document.querySelector("#btnLimpiar");
 const carro = [];
 
 
@@ -42,6 +43,17 @@ function filtrarPorPrecio(precioMin, precioMax){
 }
 
 // Filtrar por titulo
+function filtrarPorTitulo(titulo){
+    const filtradosPorTitulo = libros.filter((libro) => libro.titulo.toLowerCase().includes(titulo.toLowerCase()));
+    return filtradosPorTitulo;
+}
+
+// Limpiar filtros
+function limpiar(){
+    location.reload();
+}
+
+
 
 
 // EVENTOS
@@ -55,43 +67,23 @@ btnFiltrarPrecio.onclick = () => {
     }
 }
 
-
-// backup
-// card - <div class="card col-sm-2 m-3 p-3" style="background-color: rgba(254,189,46,255)"> 
-// https://www.youtube.com/watch?v=PwEvMY7nnY8
-
-// --------------------------------------------------------------------------------------------------------------------// 
-
-
-
-// funcion para buscar y filtrar
-
-// let inputSearch = document.querySelector("#inputSearch");
-// let btnSearch = document.querySelector("#btnSearch");
-
-/*
-// const buscarTitulos = libros.filter((libro) => ((libro.titulo.toLowerCase().includes(inputSearch))))
-
-function buscarArray(){
-    const buscarTitulos = libros.filter((libro) => ((libro.titulo.toLowerCase().includes(inputSearch))))
+// Limpiar filtros
+btnLimpiar.onclick = () => {
+    limpiar();
 }
 
-btnSearch.addEventListener("click", buscarArray);
 
-
-
-*/
-
-/*
-function filtrarPorModelo(titulo){
-    const filtrados = productos.filter((prod) => prod.titulo.toLowerCase().includes(titulo.toLowerCase()));
-    return filtrados;
-}
-
-filtroNombre.onclick = () => {
-    if(titulo.value != ""){
-        let listaFiltrados = filtrarPorModelo(titulo.value);
-        renderizarProductos(listaFiltrados);
+// Filtrar por titulo
+btnFiltrarTitulo.onclick = () => {
+    if(inputTitulo.value != ""){
+        let listaFiltradosTitulo = filtrarPorTitulo(inputTitulo.value);
+        console.table(listaFiltradosTitulo);
+        renderizarProductos(listaFiltradosTitulo);
     }
 }
-*/
+
+
+
+// --------------------------------------------------------------------------------------------------------------------// 
+// info
+// card - <div class="card col-sm-2 m-3 p-3" style="background-color: rgba(254,189,46,255)"> 

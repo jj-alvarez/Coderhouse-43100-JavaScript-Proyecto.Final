@@ -10,50 +10,61 @@
 </head>
 <body>
     <div class="bg-secondary">
-        <header class="bg-dark">
-            <div class="container">
-                <h1 class="text-center text-light p-2">La Biblioteca Escondida</h1>
-            </div> 
+        <header class="header">
+            <div class="bg-dark">
+                <div class="container">
+                    <h1 class="text-center text-light p-2">La Biblioteca Escondida</h1>
+                </div> 
+            </div>
         </header>
-
-        <div>
+        <nav class="navbars">
             <div class="bg-light">
                 <div class="barraBusqueda">
                     <h5>Conoce nuestros últimos titulos!</h5>
                     <div>
-                        <label for="min">
+                        <label>
                             <input type="number" name="min" id="inputMin" min="0" maxlength="6" class="form-control me-2" placeholder="$ Minimo...">
                         </label>
-                        <label for="max">
+                        <label>
                             <input type="number" name="max" id="inputMax" max="100" maxlength="6" class="form-control me-2" placeholder="$ Maximo...">
                         </label>
                         <button type="submit" value="Filtrar" id="btnFiltrarPrecio" class="btn btn-warning">Precio</button>
                     </div>
                     <div>
-                        <label for="titulo">
+                        <label>
                             <input id="inputTitulo" name="titulo" class="form-control me-2" type="search" placeholder="Buscar...">
                         </label>
                         <button type="submit" value="Filtrar" id="btnFiltrarTitulo" class="btn btn-warning">Título</button>
                     </div>
+                    <div>
+                        <button type="submit" value="Limpiar" id="btnLimpiar" class="btn btn-danger">Limpiar</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <main class="bg-secondary">
-            <div class="container">
-                <div id="misCards" class="row">
-                    <!-- cards insertadas via app.js-->
-                </div> 
+        </nav>
+        <main class="main">
+            <div class="bg-secondary">
+                <div class="container">
+                    <div id="misCards" class="row">
+                        <!-- cards insertadas via app.js-->
+                    </div> 
+                </div>
             </div>
         </main>
 
-        <div>
-            <!-- Carrito -->
-        </div>
+        <section class="section-cart">
+            <div class="bg-light">
+                <div class="container">
+                    <p class="text-center p-2">Carrito!</p>
+                </div>
+            </div>
+        </section>
     
-        <footer class="bg-dark">
-            <div class="container">
-                <p class="text-center text-light p-2">Todos los derechos reservados</p>
+        <footer class="footer">
+            <div class="bg-dark">
+                <div class="container">
+                    <p class="text-center text-light p-2">Todos los derechos reservados</p>
+                </div>
             </div>
         </footer>
 
