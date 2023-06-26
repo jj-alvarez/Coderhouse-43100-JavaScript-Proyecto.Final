@@ -55,7 +55,21 @@
         <section class="section-cart">
             <div class="bg-light">
                 <div class="container">
-                    <p class="text-center p-2">Carrito!</p>
+                    <h5>Carrito!</h5>
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Autor</th>
+                                <th>Universo</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCarrito">
+                            <!-- items insertados via app.js -->
+                        </tbody>
+                    </table>
+                    <h5 id="totalPagar">Total a pagar $ </h5>
                 </div>
             </div>
         </section>
