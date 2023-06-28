@@ -2,6 +2,7 @@
 
 let misCards = document.querySelector("#misCards");
 let botones = document.getElementsByClassName("btn btn-dark btnCompra");
+// let botones;
 const btnFiltrarPrecio = document.querySelector("#btnFiltrarPrecio");
 let inputMin = document.querySelector("#inputMin");
 let inputMax = document.querySelector("#inputMax");
@@ -9,7 +10,8 @@ const btnFiltrarTitulo = document.querySelector("#btnFiltrarTitulo");
 let inputTitulo = document.querySelector("#inputTitulo");
 const btnLimpiar = document.querySelector("#btnLimpiar");
 let tablaCarrito = document.querySelector("#tablaCarrito");
-const carrito = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+carrito.length = 0;
 
 
 console.table(libros);
@@ -57,6 +59,7 @@ function limpiar(){
     location.reload();
 }
 
+
 // Agregar al carrito
 function agregarCompra(libro){
     carrito.push(libro);
@@ -73,8 +76,23 @@ function agregarCompra(libro){
     let totalPagar = carrito.reduce((ac, libro) => ac + libro.precio,0);
     console.table(totalPagar);
     document.querySelector("#totalPagar").innerText = `Total a pagar $:${totalPagar}`;
+}
+
+// Recargar botones
+
+function actualizarBotones(){
+    botones = document.getElementsByClassName("btn btn-dark btnCompra");
+    
+    for(const boton of botones){
+        boton.addEventListener("click", () => {
+            const librosCarrito = libros.find((libro) => libro.id == boton.id);
+            console.table(librosCarrito);
+            agregarCompra(librosCarrito);
+        })
+    }
     
 }
+actualizarBotones();
 
 
 // EVENTOS --------------------------------------------------------------------------------------------------->
@@ -85,7 +103,9 @@ btnFiltrarPrecio.onclick = () => {
         let listaFiltradosPrecio = filtrarPorPrecio(inputMin.value, inputMax.value);
         console.table(listaFiltradosPrecio);
         renderizarProductos(listaFiltradosPrecio);
+        actualizarBotones();
     }
+    
 }
 
 
@@ -95,25 +115,17 @@ btnFiltrarTitulo.onclick = () => {
         let listaFiltradosTitulo = filtrarPorTitulo(inputTitulo.value);
         console.table(listaFiltradosTitulo);
         renderizarProductos(listaFiltradosTitulo);
+        actualizarBotones();
     }
+    
 }
 
 
 // Limpiar filtros
 btnLimpiar.onclick = () => {
     limpiar();
+    
 }
-
-
-// Agregar a carrito
-for(const boton of botones){
-    boton.addEventListener("click", () => {
-        const librosCarrito = libros.find((libro) => libro.id == boton.id);
-        console.table(librosCarrito);
-        agregarCompra(librosCarrito);
-    })
-}
-
 
 
 // INFO -----------------------------------------------------------------------------------------------------------> 
