@@ -2,7 +2,6 @@
 
 let misCards = document.querySelector("#misCards");
 let botones = document.getElementsByClassName("btn btn-dark btnCompra");
-// let botones;
 const btnFiltrarPrecio = document.querySelector("#btnFiltrarPrecio");
 let inputMin = document.querySelector("#inputMin");
 let inputMax = document.querySelector("#inputMax");
@@ -57,6 +56,7 @@ function filtrarPorTitulo(titulo){
 // Limpiar filtros
 function limpiar(){
     location.reload();
+    localStorage.clear();
 }
 
 
@@ -76,10 +76,11 @@ function agregarCompra(libro){
     let totalPagar = carrito.reduce((ac, libro) => ac + libro.precio,0);
     console.table(totalPagar);
     document.querySelector("#totalPagar").innerText = `Total a pagar $:${totalPagar}`;
+    // local storage, visto en el after 03
+    localStorage.setItem('carrito',JSON.stringify(carrito));
 }
 
 // Recargar botones
-
 function actualizarBotones(){
     botones = document.getElementsByClassName("btn btn-dark btnCompra");
     
@@ -105,7 +106,6 @@ btnFiltrarPrecio.onclick = () => {
         renderizarProductos(listaFiltradosPrecio);
         actualizarBotones();
     }
-    
 }
 
 
@@ -117,14 +117,12 @@ btnFiltrarTitulo.onclick = () => {
         renderizarProductos(listaFiltradosTitulo);
         actualizarBotones();
     }
-    
 }
 
 
 // Limpiar filtros
 btnLimpiar.onclick = () => {
     limpiar();
-    
 }
 
 
