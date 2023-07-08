@@ -10,7 +10,6 @@ let inputTitulo = document.querySelector("#inputTitulo");
 const btnLimpiar = document.querySelector("#btnLimpiar");
 const btnVaciar = document.querySelector("#btnVaciar");
 const btnFinalizarCompra = document.querySelector("#btnFinalizarCompra");
-let btnEliminar = document.querySelector("#btnEliminar");
 let tablaCarrito = document.querySelector("#tablaCarrito");
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 carrito.length = 0;
@@ -103,7 +102,7 @@ function agregarCompra(libro){
             <td>${libro.autor}</td>
             <td>${libro.universo}</td>
             <td>$ ${libro.precio}</td>
-            <td><button id="btnEliminar" class="btn btn-dark btnEliminar">X</button><td>
+            <td><button id=${libro.id} class="btnEliminar">X</button><td>
         </tr>
     `;
     
