@@ -68,3 +68,7 @@ gris intermedio rgba(90,92,92,255);
     text-decoration: none;
     color: white;
 }
+
+.swal-button {
+    background-color: rgba(254,189,46,255);
+    }

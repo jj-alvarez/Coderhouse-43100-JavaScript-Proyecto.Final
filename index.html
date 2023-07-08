@@ -38,11 +38,11 @@
                         <button type="submit" value="Filtrar" id="btnFiltrarTitulo" class="btn btn-warning">Título</button>
                     </div>
                     <div>
-                        <button type="submit" value="Limpiar" id="btnLimpiar" class="btn btn-dark">Limpiar</button>
+                        <button type="submit" value="Limpiar" id="btnLimpiar" class="btn btn-secondary">Limpiar</button>
                     </div>
                     <div class="vl"></div>
                     <div>
-                        <button type="submit" value="Carrito" id="btnCarrito" class="btn btn-success"><a class="linkInterno" href="#carrito">Ir a Carrito</a></button>
+                        <button type="submit" value="Carrito" id="btnCarrito" class="btn btn-dark"><a class="linkInterno" href="#carrito">Ir a Carrito</a></button>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 <div class="container">
                     <div id="carrito" class="carrito-header">
                         <h5>Carrito de Compras</h5>
-                        <button type="submit" value="Vaciar" id="btnVaciar" class="btn btn-danger">Vaciar Carrito</button>
+                        <button type="submit" value="Vaciar" id="btnVaciar" class="btn btn-dark">Vaciar el Carrito!</button>
                     </div>
                     <table class="table table-light">
                         <thead>
@@ -71,6 +71,7 @@
                                 <th>Autor</th>
                                 <th>Universo</th>
                                 <th>Precio</th>
+                                <th>Remover</th>
                             </tr>
                         </thead>
                         <tbody id="tablaCarrito">
@@ -79,7 +80,7 @@
                     </table>
                     <div class="carrito-footer">
                         <h5 id="totalPagar">Total a pagar $ </h5>
-                        <button type="submit" value="Comprar" id="btnFinalizarCompra" class="btn btn-success">Finalizar Compra</button>
+                        <button type="submit" value="Comprar" id="btnFinalizarCompra" class="btn btn-warning">Finalizar Compra</button>
                     </div>
                 </div>
             </div>
@@ -95,6 +96,8 @@
 
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="./script/libros.js"></script>
     <script src="./script/app.js"></script>

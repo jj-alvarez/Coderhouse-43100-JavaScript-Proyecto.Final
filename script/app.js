@@ -10,10 +10,10 @@ let inputTitulo = document.querySelector("#inputTitulo");
 const btnLimpiar = document.querySelector("#btnLimpiar");
 const btnVaciar = document.querySelector("#btnVaciar");
 const btnFinalizarCompra = document.querySelector("#btnFinalizarCompra");
+let btnEliminar = document.querySelector("#btnEliminar");
 let tablaCarrito = document.querySelector("#tablaCarrito");
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 carrito.length = 0;
-
 
 console.table(libros);
 
@@ -67,14 +67,30 @@ function vaciar(){
     localStorage.clear();
 }
 
+
 // Finalizar Compra
 function finalizarCompra(){
     if (carrito.length === 0){
-        alert("Por favor, seleccione al menos un libro para comprar");
+        Swal.fire({
+            icon: 'error',
+            title: 'Se ha producido un error.',
+            text: 'Por favor, seleccione al menos un libro para continuar.',
+            backdrop: true,
+            confirmButtonColor: '#1C1C1C',
+            confirmButtonText: 'Volver'
+        })
     }else{
-        alert("Gracias por tu compra!");
-        vaciar();
-    }
+        Swal.fire({
+            icon: 'success',
+            title: 'Compra realizada.',
+            text: 'Muchas gracias!',
+            backdrop: true,
+            showConfirmButton: false,
+        })
+        setTimeout(() => {
+            vaciar();
+        }, 2000);
+    }   
 }
 
 // Agregar al carrito
@@ -87,6 +103,7 @@ function agregarCompra(libro){
             <td>${libro.autor}</td>
             <td>${libro.universo}</td>
             <td>$ ${libro.precio}</td>
+            <td><button id="btnEliminar" class="btn btn-dark btnEliminar">X</button><td>
         </tr>
     `;
     
@@ -155,3 +172,4 @@ btnFinalizarCompra.onclick = () =>{
 // INFO -----------------------------------------------------------------------------------------------------------> 
 
 // card - <div class="card col-sm-2 m-3 p-3" style="background-color: rgba(254,189,46,255)"> 
+// sweet alert customizacion - https://www.youtube.com/watch?v=NDASIexWyhU
