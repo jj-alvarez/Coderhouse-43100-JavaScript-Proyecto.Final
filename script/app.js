@@ -8,6 +8,8 @@ let inputMax = document.querySelector("#inputMax");
 const btnFiltrarTitulo = document.querySelector("#btnFiltrarTitulo");
 let inputTitulo = document.querySelector("#inputTitulo");
 const btnLimpiar = document.querySelector("#btnLimpiar");
+const btnVaciar = document.querySelector("#btnVaciar");
+const btnFinalizarCompra = document.querySelector("#btnFinalizarCompra");
 let tablaCarrito = document.querySelector("#tablaCarrito");
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 carrito.length = 0;
@@ -55,10 +57,25 @@ function filtrarPorTitulo(titulo){
 
 // Limpiar filtros
 function limpiar(){
+    renderizarProductos(libros);
+    actualizarBotones();
+}
+
+// Vaciar Carrito
+function vaciar(){
     location.reload();
     localStorage.clear();
 }
 
+// Finalizar Compra
+function finalizarCompra(){
+    if (carrito.length === 0){
+        alert("Por favor, seleccione al menos un libro para comprar");
+    }else{
+        alert("Gracias por tu compra!");
+        vaciar();
+    }
+}
 
 // Agregar al carrito
 function agregarCompra(libro){
@@ -125,6 +142,15 @@ btnLimpiar.onclick = () => {
     limpiar();
 }
 
+// Vaciar Carrito
+btnVaciar.onclick = () => {
+    vaciar();
+}
+
+// finalizar Compra
+btnFinalizarCompra.onclick = () =>{
+    finalizarCompra();
+}
 
 // INFO -----------------------------------------------------------------------------------------------------------> 
 

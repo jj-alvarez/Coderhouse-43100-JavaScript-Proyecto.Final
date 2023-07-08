@@ -21,6 +21,7 @@
             <div class="bg-light">
                 <div class="barraBusqueda">
                     <h5>Conoce nuestros últimos titulos!</h5>
+                    <div class="vl"></div>
                     <div>
                         <label>
                             <input type="number" name="min" id="inputMin" min="0" maxlength="6" class="form-control me-2" placeholder="$ Minimo...">
@@ -37,7 +38,11 @@
                         <button type="submit" value="Filtrar" id="btnFiltrarTitulo" class="btn btn-warning">Título</button>
                     </div>
                     <div>
-                        <button type="submit" value="Limpiar" id="btnLimpiar" class="btn btn-danger">Limpiar</button>
+                        <button type="submit" value="Limpiar" id="btnLimpiar" class="btn btn-dark">Limpiar</button>
+                    </div>
+                    <div class="vl"></div>
+                    <div>
+                        <button type="submit" value="Carrito" id="btnCarrito" class="btn btn-success"><a class="linkInterno" href="#carrito">Ir a Carrito</a></button>
                     </div>
                 </div>
             </div>
@@ -55,7 +60,10 @@
         <section class="section-cart">
             <div class="bg-light">
                 <div class="container">
-                    <h5>Carrito!</h5>
+                    <div id="carrito" class="carrito-header">
+                        <h5>Carrito de Compras</h5>
+                        <button type="submit" value="Vaciar" id="btnVaciar" class="btn btn-danger">Vaciar Carrito</button>
+                    </div>
                     <table class="table table-light">
                         <thead>
                             <tr>
@@ -69,7 +77,10 @@
                             <!-- items insertados via app.js -->
                         </tbody>
                     </table>
-                    <h5 id="totalPagar">Total a pagar $ </h5>
+                    <div class="carrito-footer">
+                        <h5 id="totalPagar">Total a pagar $ </h5>
+                        <button type="submit" value="Comprar" id="btnFinalizarCompra" class="btn btn-success">Finalizar Compra</button>
+                    </div>
                 </div>
             </div>
         </section>
