@@ -5,7 +5,7 @@
       "autor": "J.R.R. Tolkien",
       "universo": "The Lord Of The Rings",
       "precio": 25,
-      "foto": "../assets/img/tapas/the-fellowship-of-the-ring.jpeg"
+      "foto": "./assets/img/tapas/the-fellowship-of-the-ring.jpeg"
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "autor": "J.R.R. Tolkien",
       "universo": "The Lord Of The Rings",
       "precio": 25,
-      "foto": "../assets/img/tapas/the-two-towers.jpeg"
+      "foto": "./assets/img/tapas/the-two-towers.jpeg"
     },
     {
       "id": 3,
@@ -21,7 +21,7 @@
       "autor": "J.R.R. Tolkien",
       "universo": "The Lord Of The Rings",
       "precio": 25,
-      "foto": "../assets/img/tapas/the-return-of-the-king.jpeg"
+      "foto": "./assets/img/tapas/the-return-of-the-king.jpeg"
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "autor": "William King",
       "universo": "Warhammer",
       "precio": 35,
-      "foto": "../assets/img/tapas/gotrek-felix.jpeg"
+      "foto": "./assets/img/tapas/gotrek-felix.jpeg"
     },
     {
       "id": 5,
@@ -37,7 +37,7 @@
       "autor": "Dan Abnett",
       "universo": "Warhammer 40.000",
       "precio": 35,
-      "foto": "../assets/img/tapas/eisenhorn.jpeg"
+      "foto": "./assets/img/tapas/eisenhorn.jpeg"
     },
     {
       "id": 6,
@@ -45,7 +45,7 @@
       "autor": "Gav Thorpe",
       "universo": "Warhammer 40.000",
       "precio": 15,
-      "foto": "../assets/img/tapas/indomitus-tapa.jpg"
+      "foto": "./assets/img/tapas/indomitus-tapa.jpg"
     },
     {
       "id": 7,
@@ -53,7 +53,7 @@
       "autor": "Steve Lyons",
       "universo": "Warhammer 40.000",
       "precio": 15,
-      "foto": "../assets/img/tapas/krieg-tapa.jpg"
+      "foto": "./assets/img/tapas/krieg-tapa.jpg"
     },
     {
       "id": 8,
@@ -61,7 +61,7 @@
       "autor": "Dan Abnett",
       "universo": "Warhammer 40.000",
       "precio": 25,
-      "foto": "../assets/img/tapas/the-founding-tapa.jpeg"
+      "foto": "./assets/img/tapas/the-founding-tapa.jpeg"
     },
     {
       "id": 9,
@@ -69,7 +69,7 @@
       "autor": "Gav Thorpe",
       "universo": "Warhammer 40.000",
       "precio": 30,
-      "foto": "../assets/img/tapas/sons-of-sang.jpeg"
+      "foto": "./assets/img/tapas/sons-of-sang.jpeg"
     },
     {
       "id": 10,
@@ -77,7 +77,7 @@
       "autor": "Graham McNeil",
       "universo": "Warhammer 40.000",
       "precio": 15,
-      "foto": "../assets/img/tapas/uriel-ventris.jpeg"
+      "foto": "./assets/img/tapas/uriel-ventris.jpeg"
     },
     {
       "id": 11,
@@ -85,7 +85,7 @@
       "autor": "Graham McNeil",
       "universo": "Warhammer 40.000",
       "precio": 40,
-      "foto": "../assets/img/tapas/ultramarines.jpeg"
+      "foto": "./assets/img/tapas/ultramarines.jpeg"
     },
     {
       "id": 12,
@@ -93,7 +93,7 @@
       "autor": "Dan Abnett",
       "universo": "Warhammer 40.000",
       "precio": 55,
-      "foto": "../assets/img/tapas/damnation-crusade.jpeg"
+      "foto": "./assets/img/tapas/damnation-crusade.jpeg"
     },
     {
       "id": 13,
@@ -101,7 +101,7 @@
       "autor": "Andrzej Sapkowski",
       "universo": "The Witcher",
       "precio": 25,
-      "foto": "../assets/img/tapas/last-wish.jpeg"
+      "foto": "./assets/img/tapas/last-wish.jpeg"
     },
     {
       "id": 14,
@@ -109,7 +109,7 @@
       "autor": "Aaron Rosenberg",
       "universo": "Warcraft",
       "precio": 15,
-      "foto": "../assets/img/tapas/tides-of-darkness.jpeg"
+      "foto": "./assets/img/tapas/tides-of-darkness.jpeg"
     },
     {
       "id": 15,
@@ -117,7 +117,7 @@
       "autor": "Christie Golden",
       "universo": "Warcraft",
       "precio": 10,
-      "foto": "../assets/img/tapas/rise-horde.jpeg"
+      "foto": "./assets/img/tapas/rise-horde.jpeg"
     },
     {
       "id": 16,
@@ -125,7 +125,7 @@
       "autor": "Christie Golden",
       "universo": "Warcraft",
       "precio": 25,
-      "foto": "../assets/img/tapas/arthas.jpeg"
+      "foto": "./assets/img/tapas/arthas.jpeg"
     }
 ]
   
