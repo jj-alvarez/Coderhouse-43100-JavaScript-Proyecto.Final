@@ -19,6 +19,32 @@ console.table(libros);
 
 // FUNCIONES ---------------------------------------------------------------------------------------------------------->
 
+// Verificar el array del LocalStorage
+function verificarCarrito() {
+    let carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
+    let totalPagarGuardado = parseFloat(localStorage.getItem('totalPagar'));
+  
+    if (carritoGuardado && carritoGuardado.length > 0) {
+      carrito = carritoGuardado;
+      tablaCarrito.innerHTML = '';
+  
+      for (const libro of carrito) {
+        tablaCarrito.innerHTML += `
+          <tr>
+            <td>${libro.titulo}</td>
+            <td>${libro.autor}</td>
+            <td>${libro.universo}</td>
+            <td>$ ${libro.precio}</td>
+            <td><button class="btnEliminar" onclick="eliminar(event)">X</button><td>
+          </tr>
+        `;
+      }
+  
+      document.querySelector("#totalPagar").innerText = `Total a pagar $:${totalPagarGuardado}`;
+    }
+}
+   
+
 // Renderizar productos, visto en after02
 function renderizarProductos(listaLibros){
     misCards.innerHTML="";
@@ -30,7 +56,7 @@ function renderizarProductos(listaLibros){
                 <div class="card-body">
                     <h5 class="card-title">${libro.titulo}</h5>
                     <p class="card-text">$ ${libro.precio}</p>
-                    <button id=${libro.id} class="btn btn-dark btnCompra">Comprar</button>
+                    <button id=${libro.id} class="btn btn-dark btnCompra">Agregar</button>
                 </div>
             </div>
         `;
@@ -64,6 +90,20 @@ function limpiar(){
 function vaciar(){
     location.reload();
     localStorage.clear();
+}
+
+
+// Eliminar items del carrito de compras
+function eliminar(event) {
+    const index = Array.from(tablaCarrito.rows).findIndex((row) => row.contains(event.target));
+    if (index > -1) {
+      carrito.splice(index, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      tablaCarrito.deleteRow(index + 0);
+      let totalPagar = carrito.reduce((ac, libro) => ac + libro.precio, 0);
+      document.querySelector("#totalPagar").innerText = `Total a pagar $:${totalPagar}`;
+    }
+    console.table(carrito);
 }
 
 
@@ -102,15 +142,16 @@ function agregarCompra(libro){
             <td>${libro.autor}</td>
             <td>${libro.universo}</td>
             <td>$ ${libro.precio}</td>
-            <td><button id=${libro.id} class="btnEliminar">X</button><td>
+            <td><button class="btnEliminar" onclick="eliminar(event)">X</button><td>
         </tr>
     `;
     
     let totalPagar = carrito.reduce((ac, libro) => ac + libro.precio,0);
     console.table(totalPagar);
     document.querySelector("#totalPagar").innerText = `Total a pagar $:${totalPagar}`;
-    // local storage, visto en el after 03
+    // local storage, visto en el after 03. Guardo ambos valores
     localStorage.setItem('carrito',JSON.stringify(carrito));
+    localStorage.setItem('totalPagar', totalPagar);
 }
 
 // Recargar botones
@@ -127,7 +168,7 @@ function actualizarBotones(){
     
 }
 actualizarBotones();
-
+verificarCarrito();
 
 // EVENTOS --------------------------------------------------------------------------------------------------->
 
@@ -163,7 +204,7 @@ btnVaciar.onclick = () => {
     vaciar();
 }
 
-// finalizar Compra
+// Finalizar Compra
 btnFinalizarCompra.onclick = () =>{
     finalizarCompra();
 }
