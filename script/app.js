@@ -14,8 +14,8 @@ let tablaCarrito = document.querySelector("#tablaCarrito");
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 carrito.length = 0;
 
-console.table(libros);
-
+// console.table(libros);
+let libros;
 
 // FUNCIONES ---------------------------------------------------------------------------------------------------------->
 
@@ -45,6 +45,21 @@ function verificarCarrito() {
 }
    
 
+// Renderizar Productos, por medio de fetch y archivo json (after04)
+
+obtenerJsonProds()
+
+async function obtenerJsonProds(){
+    const URLJSON = "./script/libros.json";
+    const respuesta = await fetch(URLJSON);
+    const data = await respuesta.json();
+    libros = data;
+    renderizarProductos(libros);
+    actualizarBotones();
+    console.table(libros);
+}
+
+
 // Renderizar productos, visto en after02
 function renderizarProductos(listaLibros){
     misCards.innerHTML="";
@@ -63,7 +78,7 @@ function renderizarProductos(listaLibros){
     }
 }
 
-renderizarProductos(libros);
+// renderizarProductos(libros); comentado, visto en el after 04
 
 
 // Filtrar por precio, visto en after 03
@@ -208,8 +223,3 @@ btnVaciar.onclick = () => {
 btnFinalizarCompra.onclick = () =>{
     finalizarCompra();
 }
-
-// INFO -----------------------------------------------------------------------------------------------------------> 
-
-// card - <div class="card col-sm-2 m-3 p-3" style="background-color: rgba(254,189,46,255)"> 
-// sweet alert customizacion - https://www.youtube.com/watch?v=NDASIexWyhU
